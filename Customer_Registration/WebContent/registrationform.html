@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Welcome to Registration page</title>
+        
+
+       
+        
+        <link rel="stylesheet" href="regnform.css">
+   <script>
+        function validation()                                    
+        { 
+            var first_name = document.forms["Registration"]["first_name"];
+            var last_name = document.forms["Registration"]["last_name"];  
+            var customer_id = document.forms["Registration"]["customer_id"] ;           
+            var email = document.forms["Registration"]["EMail"];    
+            var phone = document.forms["Registration"]["contact_number"];  
+            var state =  document.forms["Registration"]["State"];  
+            var password = document.forms["Registration"]["Password"];  
+            var address = document.forms["Registration"]["Address"];  
+            var pincode = document.forms["Registration"] ["pincode"];
+           
+            if (first_name.value == "")                                  
+            { 
+                window.alert("Please enter your first_name."); 
+                first_name.focus(); 
+                return false; 
+            } 
+            if (last_name.value == "")                                  
+            { 
+                window.alert("Please enter your last_name."); 
+                last_name.focus(); 
+                return false; 
+            } 
+            if(customer_id.value == "")                                  
+            { 
+                window.alert("Please enter your CustomerId."); 
+                customer_id.focus(); 
+                return false; 
+            } 
+            if (address.value == "")                               
+            { 
+                window.alert("Please enter your address."); 
+                address.focus(); 
+                return false; 
+            } 
+               
+            if (email.value == "")                                   
+            { 
+                window.alert("Please enter a valid e-mail address."); 
+                email.focus(); 
+                return false; 
+            } 
+           
+            if (phone.value == "")                           
+            { 
+                window.alert("Please enter your telephone number."); 
+                phone.focus(); 
+                return false; 
+            } 
+           
+            if (password.value == "")                        
+            { 
+                window.alert("Please enter your password"); 
+                password.focus(); 
+                return false; 
+            } 
+           
+            if (state.value == "")                        
+            { 
+                window.alert("Please choose a valid state from the dropdown list"); 
+                state.focus(); 
+                return false; 
+            } 
+            if (pincode.value == "")                        
+            { 
+                window.alert("Please enter your valid pincode"); 
+                pincode.focus(); 
+                return false; 
+            } 
+           if(password.value!=retype_password.value)
+           {
+               window.alert("PASSWORD DOES NOT MATCH");
+           }
+           
+            return true; 
+        }
+    </script> 
+        
+</head>
+<body>
+    <br>
+    <br>
+
+    <h2 style = "font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'; text-align:center;">NEW TO TECHBEE? SIGN UP!</h2>
+
+    <img src="C:\Users\admin\Desktop\logo.jpg" width="200" height="100"  float="right"alt="Logo is here" />
+        <br/>
+<br/>
+
+
+    <form name = "Registration" method="post" onsubmit="return validation()" action="/Customer_Registration/CustomerApplication" >
+<table id ="table1">
+    <tr>
+ <td class="td1">FirstName<span style="color:red;">*</span> :</td> 
+ <td ><input type="text" name= "first_name" placeholder="Enter your first name" value ="Garima" class="fields" /></td> 
+</tr>
+ 
+<tr>
+    <td class="td1">LastName<span style="color:red;">*</span> :</td> 
+    <td ><input type="text" name= "last_name" placeholder="Enter your last name" value ="De" class="fields" /></td> 
+   </tr>
+
+ <tr>
+     <td class="td1">Customer_Id<span style="color:red;">*</span> :</td> 
+     <td ><input type="text" name="customer_id" placeholder="Enter customer id" value ="C03" class="fields"/></td>
+    </tr>
+    
+    <tr>
+ <td class="td1">E-mail Address<span style="color:red;">*</span> :</td>
+ <td > <input type="email"  name="EMail" placeholder="Enter your e-mail address" value ="g@d.com" class="fields" /></td>
+</tr>
+ 
+<tr>
+       <td class="td1"> Contact Number<span style="color:red;">*</span> :</td>
+       <td ><input type="text" name="contact_number" placeholder="Enter customer id" value ="123456789" class="fields"/></td>
+</tr>
+ 
+<tr>
+ <td class="td1">Address<span style="color:red;">*</span> :</td>
+ <td> <input type="text"  name="Address" Placeholder="Flat No./ Street/ Lane " value ="Hyderabad" class="fields"/></td>
+</tr>
+ 
+ <tr> 
+        <td class="td1">State<span style="color:red;">*</span> :</td>
+        <td><select type="text"  name="State" class="fields" > 
+			<option>MAHARASHTRA</option> 
+			<option>WEST BENGAL</option> 
+			<option>ODISHA</option> 
+			<option>TELANGANA</option> 
+            <option>TAMIL NADU</option> 
+            <option>KERALA</option> 
+        </select></td>
+    </tr>
+
+<tr><td class="td1">Pincode<span style="color:red;">*</span> :</td> 
+    <td ><input id="zip" type="text" pattern="[0-9]*" size="6ss" name="pincode" value ="123456" class="fields" /></td>
+</tr>
+ <tr>
+     <td class="td1"> Password<span style="color:red;">*</span> :</td>
+     <td ><input type="password" name="password" placeholder="Enter password" value ="pass" class="fields"/></td></tr>
+ 
+ <tr>
+        <td></td>
+        <td><input type="submit" style="background-color: green; color:white;"  value ="SUBMIT" id="button"></td>
+    </tr>
+ 
+</form>
+</body>
+</html>
